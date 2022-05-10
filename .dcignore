@@ -25,7 +25,6 @@ htmldocs/
 # Android
 bin/
 gen/
-out/
 build/
 proguard/
 captures/
