@@ -15,8 +15,8 @@ import poc.ms.hexagonal._common.BaseIT;
 import poc.ms.hexagonal._mock.MockPerson;
 import poc.ms.hexagonal.application.port.out.PersonRepositoryPort;
 import poc.ms.hexagonal.domain.Person;
-import poc.ms.hexagonal.rest.dto.PersonRequest;
-import poc.ms.hexagonal.rest.dto.PersonResponse;
+import poc.ms.hexagonal.dto.PersonRequestDTO;
+import poc.ms.hexagonal.dto.PersonResponseDTO;
 
 import java.util.Optional;
 import java.util.UUID;
@@ -47,8 +47,8 @@ class PersonControllerIT extends BaseIT {
         final UUID expectedId = personSaved.get().id();
         final String expectedName = personSaved.get().name();
 
-        ResponseEntity<PersonResponse> response = testRestTemplate
-                .getForEntity("/persons/{personId}", PersonResponse.class, expectedId);
+        ResponseEntity<PersonResponseDTO> response = testRestTemplate
+                .getForEntity("/persons/{personId}", PersonResponseDTO.class, expectedId);
 
         assertNotNull(response);
         assertEquals(OK, response.getStatusCode());
@@ -63,11 +63,11 @@ class PersonControllerIT extends BaseIT {
     @DisplayName("create returns Person when successful")
     void test02() {
 
-        final PersonRequest personToBeSaved = MockPerson.mockValidPersonRequestToCreate();
+        final PersonRequestDTO personToBeSaved = MockPerson.mockValidPersonRequestToCreate();
         String expectedName = personToBeSaved.getName();
 
-        ResponseEntity<PersonResponse> response = testRestTemplate
-                .postForEntity("/persons", personToBeSaved, PersonResponse.class);
+        ResponseEntity<PersonResponseDTO> response = testRestTemplate
+                .postForEntity("/persons", personToBeSaved, PersonResponseDTO.class);
 
         assertNotNull(response);
         assertEquals(CREATED, response.getStatusCode());
@@ -89,7 +89,7 @@ class PersonControllerIT extends BaseIT {
 
         final UUID expectedId = personSaved.get().id();
 
-        PersonRequest PersonRequest = MockPerson.mockValidPersonRequestToUpdate();
+        PersonRequestDTO PersonRequest = MockPerson.mockValidPersonRequestToUpdate();
         String expectedName = PersonRequest.getName();
 
         ResponseEntity<Void> response = testRestTemplate

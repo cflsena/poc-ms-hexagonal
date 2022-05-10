@@ -3,6 +3,7 @@ server:
     include-stacktrace: on_param
   servlet:
     context-path: /poc-ms-hexagonal/api/v1/
+  port: 8080
 
 spring:
   profiles:

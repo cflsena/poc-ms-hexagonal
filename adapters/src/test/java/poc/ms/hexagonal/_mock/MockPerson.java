@@ -1,7 +1,7 @@
 package poc.ms.hexagonal._mock;
 
 import poc.ms.hexagonal.domain.Person;
-import poc.ms.hexagonal.rest.dto.PersonRequest;
+import poc.ms.hexagonal.dto.PersonRequestDTO;
 
 public final class MockPerson {
 
@@ -15,12 +15,12 @@ public final class MockPerson {
         return new Person(null, "Test");
     }
 
-    public static PersonRequest mockValidPersonRequestToCreate(){
-        return new PersonRequest("Test");
+    public static PersonRequestDTO mockValidPersonRequestToCreate(){
+        return new PersonRequestDTO("Test");
     }
 
-    public static PersonRequest mockValidPersonRequestToUpdate(){
-        return new PersonRequest("New name");
+    public static PersonRequestDTO mockValidPersonRequestToUpdate(){
+        return new PersonRequestDTO("New name");
     }
 
 }
