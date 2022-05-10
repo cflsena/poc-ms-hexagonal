@@ -1,0 +1,12 @@
+server:
+  error:
+    include-stacktrace: on_param
+  servlet:
+    context-path: /poc-ms-hexagonal/api/v1/
+
+spring:
+  profiles:
+    - test
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/master.xml

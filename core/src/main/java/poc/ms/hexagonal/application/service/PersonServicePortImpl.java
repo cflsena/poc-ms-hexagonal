@@ -19,9 +19,9 @@ public class PersonServicePortImpl implements PersonServicePort {
     private final PersonRepositoryPort personRepositoryPort;
 
     @Override
-    public Person findById(UUID personId) {
+    public Person findById(final UUID personId) {
         log.info("Searching for person {}", personId);
-        Optional<Person> person = personRepositoryPort.findById(personId);
+        final Optional<Person> person = personRepositoryPort.findById(personId);
         if (person.isEmpty()) {
             throw new BusinessException("Person not found");
         }
@@ -30,16 +30,16 @@ public class PersonServicePortImpl implements PersonServicePort {
     }
 
     @Override
-    public Person create(Person person) {
+    public Person create(final Person person) {
 
         log.info("Creating person {}", person);
-        Optional<Person> personFound = personRepositoryPort.findByName(person.name());
+        final Optional<Person> personFound = personRepositoryPort.findByName(person.name());
 
         if (personFound.isPresent()) {
             throw new BusinessException("Person already exists");
         }
 
-        Optional<Person> personSaved = personRepositoryPort.create(person);
+        final Optional<Person> personSaved = personRepositoryPort.create(person);
 
         if (personSaved.isEmpty()) {
             throw new BusinessException("Person not created");
