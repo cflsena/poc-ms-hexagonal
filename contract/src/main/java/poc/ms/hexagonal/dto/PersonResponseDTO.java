@@ -12,7 +12,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class PersonResponse {
+public class PersonResponseDTO {
 
     @Schema(description = "Campo contendo o id da pessoa", example = "3821e915-05c0-4f6c-a85d-6a0a86386df5", type = "UUID")
     private UUID id;

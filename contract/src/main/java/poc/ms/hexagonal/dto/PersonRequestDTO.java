@@ -1,4 +1,4 @@
-package poc.ms.hexagonal.rest.dto;
+package poc.ms.hexagonal.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
@@ -10,7 +10,7 @@ import javax.validation.constraints.NotBlank;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class PersonRequest {
+public class PersonRequestDTO {
 
     @NotBlank
     @Schema(description = "Campo contendo o nome da pessoa", example = "Cleiton Sena", required = true)
