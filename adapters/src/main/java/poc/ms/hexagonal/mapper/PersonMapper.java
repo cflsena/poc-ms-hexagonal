@@ -1,4 +1,4 @@
-package poc.ms.hexagonal._shared.mapper;
+package poc.ms.hexagonal.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.NullValueCheckStrategy;

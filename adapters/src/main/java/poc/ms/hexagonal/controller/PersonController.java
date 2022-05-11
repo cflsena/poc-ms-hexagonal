@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import poc.ms.hexagonal._shared.mapper.PersonMapper;
+import poc.ms.hexagonal.mapper.PersonMapper;
 import poc.ms.hexagonal.api.PersonApiContract;
 import poc.ms.hexagonal.application.port.in.PersonServicePort;
 import poc.ms.hexagonal.domain.Person;
@@ -27,6 +27,7 @@ public class PersonController implements PersonApiContract {
 
     private final PersonServicePort personServicePort;
 
+    @Override
     @Operation(summary = "Endpoint para consultar uma pessoa por id", description = "Necess\u00E1rio informar um UUID v\u00E1lido que " +
             "corresponda a uma pessoa cadastrada previamente", tags = {"Pessoas"})
     public ResponseEntity<PersonResponseDTO> findById(@PathVariable UUID personId) {
@@ -34,6 +35,7 @@ public class PersonController implements PersonApiContract {
         return ResponseEntity.ok(PersonMapper.MAPPER.toDTO(personFound));
     }
 
+    @Override
     @Operation(summary = "Endpoint para criar uma pessoa", tags = {"Pessoas"})
     public ResponseEntity<PersonResponseDTO> create(@RequestBody @Valid PersonRequestDTO request) {
         Person personToCreate = PersonMapper.MAPPER.toEntity(request);
@@ -41,6 +43,7 @@ public class PersonController implements PersonApiContract {
         return new ResponseEntity<>(PersonMapper.MAPPER.toDTO(personCreated), HttpStatus.CREATED);
     }
 
+    @Override
     @Operation(summary = "Endpoint para atualizar os atributos de uma pessoa", description = "Necess\u00E1rio informar um UUID v\u00E1lido que " +
             "corresponda a uma pessoa cadastrada previamente", tags = {"Pessoas"})
     public ResponseEntity<Void> update(@PathVariable UUID personId,
@@ -50,6 +53,7 @@ public class PersonController implements PersonApiContract {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
+    @Override
     @Operation(summary = "Endpoint para deletar uma pessoa", description = "Necess\u00E1rio informar um UUID v\u00E1lido que " +
             "corresponda a uma pessoa cadastrada previamente", tags = {"Pessoas"})
     public ResponseEntity<Void> delete(@PathVariable UUID personId) {
