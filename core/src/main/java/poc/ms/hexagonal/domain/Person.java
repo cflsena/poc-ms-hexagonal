@@ -1,8 +1,8 @@
 package poc.ms.hexagonal.domain;
 
-import lombok.Getter;
-import lombok.ToString;
-import poc.ms.hexagonal._shared.exception.DomainException;
+import poc.ms.hexagonal._shared.messages.Messages;
+import poc.ms.hexagonal.assertion.Assert;
+import poc.ms.hexagonal.exception.DomainException;
 
 import java.util.UUID;
 
@@ -13,8 +13,6 @@ public record Person(UUID id, String name) {
     }
 
     private static void validateName(final String name) {
-        if (name == null || name.isEmpty()) {
-            throw new DomainException("Person name is mandatory");
-        }
+        Assert.isNotEmpty(name, new DomainException(Messages.PERSON_IS_MANDATORY));
     }
 }

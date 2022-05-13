@@ -6,11 +6,11 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import poc.ms.hexagonal._shared.exception.BusinessException;
+import poc.ms.hexagonal._mock.MockPerson;
 import poc.ms.hexagonal.application.port.out.PersonRepositoryPort;
 import poc.ms.hexagonal.application.service.PersonServicePortImpl;
 import poc.ms.hexagonal.domain.Person;
-import poc.ms.hexagonal._mock.MockPerson;
+import poc.ms.hexagonal.exception.BusinessException;
 
 import java.util.Optional;
 import java.util.UUID;

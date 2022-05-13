@@ -20,6 +20,12 @@
     <dependencies>
 
         <dependency>
+            <groupId>poc.arq.starter.common</groupId>
+            <artifactId>infrastructure</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
             <groupId>poc.ms.hexagonal.person</groupId>
             <artifactId>client</artifactId>
             <version>1.0-SNAPSHOT</version>
@@ -29,13 +35,6 @@
             <groupId>poc.ms.hexagonal</groupId>
             <artifactId>core</artifactId>
             <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-            <version>${lombok.version}</version>
         </dependency>
 
         <dependency>

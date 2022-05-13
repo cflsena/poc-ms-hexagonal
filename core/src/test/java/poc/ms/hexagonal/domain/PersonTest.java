@@ -4,8 +4,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
-import poc.ms.hexagonal._shared.exception.DomainException;
 import poc.ms.hexagonal._mock.MockPerson;
+import poc.ms.hexagonal.exception.DomainException;
 
 import java.util.UUID;
 
