@@ -41,6 +41,16 @@
                 <version>2021.0.2</version>
                 <type>pom</type>
                 <scope>import</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>logback-classic</groupId>
+                        <artifactId>ch.qos.logback</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-logging</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -48,6 +58,16 @@
                 <type>pom</type>
                 <version>${spring.boot.version}</version>
                 <scope>import</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>logback-classic</groupId>
+                        <artifactId>ch.qos.logback</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-logging</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
         </dependencies>
     </dependencyManagement>

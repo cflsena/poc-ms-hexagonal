@@ -15,6 +15,7 @@
         <h2.version>2.0.204</h2.version>
         <commons.lang3.version>3.12.0</commons.lang3.version>
         <msql.connector.java.version>8.0.26</msql.connector.java.version>
+        <spring.data.envers.verison>2.6.4</spring.data.envers.verison>
     </properties>
 
     <dependencies>
@@ -57,6 +58,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
             <version>${spring.boot.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-envers</artifactId>
+            <version>${spring.data.envers.verison}</version>
         </dependency>
 
         <dependency>
