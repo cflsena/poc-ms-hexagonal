@@ -24,7 +24,7 @@ public class PersonServicePortImpl implements PersonServicePort {
     public Person findById(final UUID personId) {
         log.info("Searching for person {}", personId);
         final Optional<Person> person = personRepositoryPort.findById(personId);
-        Assert.isTrue(person.isEmpty(), new BusinessException(Messages.PERSON_NOT_FOUND));
+        Assert.isFalse(person.isEmpty(), new BusinessException(Messages.PERSON_NOT_FOUND));
         log.info("Person {} successfully found", personId);
         return person.get();
     }
@@ -33,9 +33,9 @@ public class PersonServicePortImpl implements PersonServicePort {
     public Person create(final Person person) {
         log.info("Creating person {}", person);
         final Optional<Person> personFound = personRepositoryPort.findByName(person.name());
-        Assert.isTrue(personFound.isPresent(), new BusinessException(Messages.PERSON_ALREADY_EXISTS));
+        Assert.isFalse(personFound.isPresent(), new BusinessException(Messages.PERSON_ALREADY_EXISTS));
         final Optional<Person> personSaved = personRepositoryPort.create(person);
-        Assert.isTrue(personFound.isEmpty(), new BusinessException(Messages.PERSON_NOT_CREATED));
+        Assert.isFalse(personSaved.isEmpty(), new BusinessException(Messages.PERSON_NOT_CREATED));
         log.info("Person {} successfully created", person);
         return personSaved.get();
     }

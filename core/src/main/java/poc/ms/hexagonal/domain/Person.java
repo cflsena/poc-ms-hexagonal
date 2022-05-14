@@ -13,6 +13,6 @@ public record Person(UUID id, String name) {
     }
 
     private static void validateName(final String name) {
-        Assert.isNotEmpty(name, new DomainException(Messages.PERSON_IS_MANDATORY));
+        Assert.isNotEmpty(name, new DomainException(Messages.PERSON_NAME_IS_MANDATORY));
     }
 }

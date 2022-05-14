@@ -7,7 +7,7 @@ import poc.ms.hexagonal.message.MessageTemplate;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public enum Messages implements MessageTemplate {
 
-    PERSON_IS_MANDATORY("POCUSER-001", "validation.person.is.mandatory"),
+    PERSON_NAME_IS_MANDATORY("POCUSER-001", "validation.person.name.is.mandatory"),
     PERSON_NOT_FOUND("POCUSER-002", "validation.person.not.found"),
     PERSON_ALREADY_EXISTS("POCUSER-003", "validation.person.already.exists"),
     PERSON_NOT_CREATED("POCUSER-004", "validation.person.not.created");

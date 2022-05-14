@@ -7,6 +7,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import poc.ms.hexagonal._mock.MockPerson;
+import poc.ms.hexagonal._shared.messages.Messages;
 import poc.ms.hexagonal.application.port.out.PersonRepositoryPort;
 import poc.ms.hexagonal.application.service.PersonServicePortImpl;
 import poc.ms.hexagonal.domain.Person;
@@ -52,9 +53,9 @@ class PersonServicePortTest {
         when(personRepositoryPort.findById(any())).thenReturn(Optional.empty());
 
         final BusinessException thrown = assertThrowsExactly(BusinessException.class, () ->
-            personServicePort.findById(any()), "Person not found");
+                personServicePort.findById(any()));
 
-        assertEquals("Person not found", thrown.getMessage());
+        assertEquals(Messages.PERSON_NOT_FOUND.message(), thrown.getMessage());
 
     }
 
@@ -84,9 +85,9 @@ class PersonServicePortTest {
         when(personRepositoryPort.findByName(any())).thenReturn(Optional.of(MockPerson.mockValidPersonWithAllArgs()));
 
         BusinessException thrown = assertThrowsExactly(BusinessException.class, () ->
-                personServicePort.create(mockValidPersonOnlyWithName), "Person already exists");
+                personServicePort.create(mockValidPersonOnlyWithName));
 
-        assertEquals("Person already exists", thrown.getMessage());
+        assertEquals(Messages.PERSON_ALREADY_EXISTS.message(), thrown.getMessage());
 
     }
 
@@ -100,9 +101,9 @@ class PersonServicePortTest {
         when(personRepositoryPort.create(any())).thenReturn(Optional.empty());
 
         BusinessException thrown = assertThrowsExactly(BusinessException.class, () ->
-                personServicePort.create(mockValidPersonOnlyWithName), "Person not created");
+                personServicePort.create(mockValidPersonOnlyWithName));
 
-        assertEquals("Person not created", thrown.getMessage());
+        assertEquals(Messages.PERSON_NOT_CREATED.message(), thrown.getMessage());
 
     }
 

@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 import poc.ms.hexagonal._mock.MockPerson;
+import poc.ms.hexagonal._shared.messages.Messages;
 import poc.ms.hexagonal.exception.DomainException;
 
 import java.util.UUID;
@@ -16,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class PersonTest {
 
     @Test
-    @DisplayName("Should create new Person")
+    @DisplayName("Should create Person")
     void test01() {
 
         String expectedName = MockPerson.mockValidPersonWithAllArgs().name();
@@ -36,9 +37,9 @@ class PersonTest {
     void test02() {
 
         final DomainException thrown = assertThrowsExactly(DomainException.class, () ->
-                new Person(null, ""), "Person name is mandatory");
+                new Person(null, ""));
 
-        assertEquals("Person name is mandatory", thrown.getMessage());
+        assertEquals(Messages.PERSON_NAME_IS_MANDATORY.message(), thrown.getMessage());
 
     }
 
