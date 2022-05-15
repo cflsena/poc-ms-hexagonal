@@ -17,11 +17,24 @@ spring:
       database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
       generate-ddl: true
       hibernate:
-        ddl-auto: update
+        ddl-auto: none
   liquibase:
     enabled: true
     change-log: classpath:db/changelog/master.xml
     default_schema: "pocmshexagonal"
+  jpa:
+    hibernate:
+      use-new-id-generator-mappings: false
+    properties:
+      org:
+        hibernate:
+          format_sql: false
+          envers:
+            audit_table_suffix: "_aud"
+            revision_field_name: revision
+            revision_type_field_name: revision_type
+            store_data_at_delete: true
+            default_schema: "pocmshexagonal"
 
 springdoc:
   swagger-ui:

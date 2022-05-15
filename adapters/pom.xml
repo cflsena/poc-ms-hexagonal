@@ -27,6 +27,12 @@
         </dependency>
 
         <dependency>
+            <groupId>poc.arq.starter.common</groupId>
+            <artifactId>database</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
             <groupId>poc.ms.hexagonal.person</groupId>
             <artifactId>client</artifactId>
             <version>1.0-SNAPSHOT</version>

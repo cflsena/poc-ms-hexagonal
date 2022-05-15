@@ -1,10 +1,9 @@
 package poc.ms.hexagonal.db.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.envers.AuditTable;
+import org.hibernate.envers.Audited;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -14,10 +13,13 @@ import java.util.UUID;
 
 @Getter
 @Entity
-@Table(name = "TB_PERSON")
+@Table(name = "tb_person")
+@AuditTable("tb_person_aud")
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Audited
+@ToString
 public class PersonModel implements Serializable {
 
     @Serial
