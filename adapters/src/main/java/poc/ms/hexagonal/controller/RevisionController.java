@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import poc.ms.hexagonal.db.repository.PersonSpringDataJPARepository;
+import poc.ms.hexagonal.dto.response.ServerResponseListDTO;
 
-import java.util.List;
 import java.util.UUID;
 
 @RequestMapping("revisions")
@@ -19,11 +19,12 @@ public class RevisionController {
     private final PersonSpringDataJPARepository repository;
 
     @GetMapping("/persons/{personId}")
-    public ResponseEntity<List<String>> revisionByPersonId(@PathVariable("personId") UUID personId) {
-        return ResponseEntity.ok(repository.findRevisions(personId)
+    public ResponseEntity<ServerResponseListDTO<String>> revisionByPersonId(@PathVariable("personId") UUID personId) {
+        final var revisions = repository.findRevisions(personId)
                 .stream()
                 .map(Object::toString)
-                .toList());
+                .toList();
+        return ResponseEntity.ok(new ServerResponseListDTO<>(revisions));
     }
 
 }
