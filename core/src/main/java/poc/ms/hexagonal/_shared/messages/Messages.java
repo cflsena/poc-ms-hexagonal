@@ -7,10 +7,7 @@ import poc.ms.hexagonal.message.MessageTemplate;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public enum Messages implements MessageTemplate {
 
-    PERSON_NAME_IS_MANDATORY("POCUSER-001", "validation.person.name.is.mandatory"),
-    PERSON_NOT_FOUND("POCUSER-002", "validation.person.not.found"),
-    PERSON_ALREADY_EXISTS("POCUSER-003", "validation.person.already.exists"),
-    PERSON_NOT_CREATED("POCUSER-004", "validation.person.not.created");
+    CHANGE_THIS_MESSAGE("ONEOSEXP-001", "validation.change.this.message");
 
     private final String code;
     private final String message;
@@ -24,4 +21,5 @@ public enum Messages implements MessageTemplate {
     public String message() {
         return this.message;
     }
+
 }
