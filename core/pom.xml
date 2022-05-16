@@ -11,7 +11,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>poc.ms.hexagonal.person</groupId>
+    <groupId>poc.ms.hexagonal.example</groupId>
     <artifactId>core</artifactId>
     <version>1.0-SNAPSHOT</version>
     <description>Core Module</description>
