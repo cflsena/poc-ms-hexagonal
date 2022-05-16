@@ -14,13 +14,13 @@ import java.util.UUID;
 @Getter
 @Entity
 @Table(name = "tb_person")
+@Audited
 @AuditTable("tb_person_aud")
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Audited
 @ToString
-public class PersonModel implements Serializable {
+public class ExampleModel implements Serializable {
 
     @Serial
     private static final long serialVersionUID = -6158662308809057542L;

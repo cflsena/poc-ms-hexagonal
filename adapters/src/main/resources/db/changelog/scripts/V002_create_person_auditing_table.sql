@@ -1,7 +1,7 @@
 --liquibase formatted sql
 --changeset cleiton.sena:V002_create_person_auditing_table
 
-CREATE TABLE tb_person_aud
+CREATE TABLE tb_example_aud
 (
     id              BINARY(16) NOT NULL,
     revision        int NOT NULL,

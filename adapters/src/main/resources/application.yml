@@ -10,7 +10,7 @@ spring:
     - default
   datasource:
     initialize: false
-    url: jdbc:mysql://localhost:3306/pocmshexagonal?createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/ONEOS_EXAMPLE?createDatabaseIfNotExist=true
     username: root
     password: root
     jpa:
@@ -21,7 +21,7 @@ spring:
   liquibase:
     enabled: true
     change-log: classpath:db/changelog/master.xml
-    default_schema: "pocmshexagonal"
+    default_schema: "ONEOS_EXAMPLE"
   jpa:
     hibernate:
       use-new-id-generator-mappings: false
@@ -34,7 +34,7 @@ spring:
             revision_field_name: revision
             revision_type_field_name: revision_type
             store_data_at_delete: true
-            default_schema: "pocmshexagonal"
+            default_schema: "ONEOS_EXAMPLE"
 
 springdoc:
   swagger-ui:

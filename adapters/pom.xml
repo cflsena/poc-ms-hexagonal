@@ -21,6 +21,7 @@
         <commons.lang3.version>3.12.0</commons.lang3.version>
         <msql.connector.java.version>8.0.26</msql.connector.java.version>
         <spring.data.envers.verison>2.6.4</spring.data.envers.verison>
+        <postgresql.version>42.3.3</postgresql.version>
     </properties>
 
     <dependencies>
@@ -38,13 +39,13 @@
         </dependency>
 
         <dependency>
-            <groupId>poc.ms.hexagonal.person</groupId>
+            <groupId>poc.ms.hexagonal.example</groupId>
             <artifactId>client</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
         <dependency>
-            <groupId>poc.ms.hexagonal</groupId>
+            <groupId>poc.ms.hexagonal.example</groupId>
             <artifactId>core</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
@@ -96,6 +97,13 @@
             <scope>runtime</scope>
             <version>${msql.connector.java.version}</version>
         </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>org.postgresql</groupId>-->
+<!--            <artifactId>postgresql</artifactId>-->
+<!--            <scope>runtime</scope>-->
+<!--            <version>${postgresql.version}</version>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>org.apache.commons</groupId>
