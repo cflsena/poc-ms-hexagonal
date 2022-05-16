@@ -19,7 +19,7 @@ public class SwaggerConfig {
     public OpenAPI springShopOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("Poc MS User 2")
+                        .title("Example Context")
                         .version(version)
                         .description(description)
                 );
