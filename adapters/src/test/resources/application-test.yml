@@ -10,3 +10,7 @@ spring:
   liquibase:
     enabled: true
     change-log: classpath:db/changelog/master.xml
+
+info:
+  version: "@project.version@"
+  description: "@project.description@"

@@ -75,8 +75,22 @@
                 </configuration>
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.verison}</version>
+                <configuration>
+                    <forkCount>1</forkCount>
+                    <useFile>false</useFile>
+                    <testFailureIgnore>false</testFailureIgnore>
+                    <useSystemClassLoader>false</useSystemClassLoader>
+                    <systemPropertyVariables>
+                        <jacoco-agent.destfile>**/jacoco.exec</jacoco-agent.destfile>
+                    </systemPropertyVariables>
+                    <includes>
+                        <include>**/*.java</include>
+                        <include>**/*.class</include>
+                    </includes>
+                </configuration>
             </plugin>
         </plugins>
     </build>
