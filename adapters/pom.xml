@@ -27,13 +27,13 @@
     <dependencies>
 
         <dependency>
-            <groupId>poc.arq.starter.common</groupId>
+            <groupId>br.com.one.os.starter</groupId>
             <artifactId>infrastructure</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
         <dependency>
-            <groupId>poc.arq.starter.common</groupId>
+            <groupId>br.com.one.os.starter</groupId>
             <artifactId>database</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
