@@ -39,3 +39,13 @@ spring:
 springdoc:
   swagger-ui:
     path: /documentation.html
+
+poc:
+  ms:
+    hexagonal:
+      person:
+        url: http://localhost:8080
+
+info:
+  version: "@project.version@"
+  description: "@project.description@"
