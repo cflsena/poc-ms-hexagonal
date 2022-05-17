@@ -2,7 +2,7 @@ package br.com.oneos.messages;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
-import poc.ms.hexagonal.message.MessageTemplate;
+import br.com.oneos.message.MessageTemplate;
 
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public enum Messages implements MessageTemplate {

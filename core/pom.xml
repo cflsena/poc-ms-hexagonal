@@ -50,7 +50,7 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>br.com.one.os.starter</groupId>
+            <groupId>br.com.oneos.sdk</groupId>
             <artifactId>common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
