@@ -7,7 +7,7 @@
 
     <parent>
         <artifactId>oneos-example</artifactId>
-        <groupId>br.com.one.os.example</groupId>
+        <groupId>br.com.oneos.example</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
@@ -18,7 +18,7 @@
     <dependencies>
 
         <dependency>
-            <groupId>poc.ms.hexagonal.example</groupId>
+            <groupId>br.com.oneos.example</groupId>
             <artifactId>contract</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>

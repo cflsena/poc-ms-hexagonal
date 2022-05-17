@@ -1,13 +1,13 @@
 package poc.ms.hexagonal.service;
 
+import br.com.oneos.application.business.ExampleServicePortImpl;
+import br.com.oneos.application.port.db.out.ExampleRepositoryPort;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import poc.ms.hexagonal.application.port.out.ExampleRepositoryPort;
-import poc.ms.hexagonal.application.service.ExampleServicePortImpl;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
