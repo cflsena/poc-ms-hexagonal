@@ -6,8 +6,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>oneos-example</artifactId>
-        <groupId>br.com.oneos.example</groupId>
+        <groupId>br.com.oneos.ms.base</groupId>
+        <artifactId>oneos-ms-base</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
