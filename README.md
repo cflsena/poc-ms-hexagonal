@@ -176,7 +176,6 @@ Principais frameworks e libs que compõem o microsserviço e suas respectivas ve
 | Spring Boot             | Base da aplicação                                      | 2.6.7       |
 | Java                    | Codificação base do app                                | 17          |
 | Maven                   | Gerenciador de dependências                            | 3.8.1       |
-| Maven                   | Gestor de dependências                                 | 3           |
 | OpenFeign               | Usado para integração Rest do app                      | 2.6.7       |
 | Lombok                  | Produtividade e redução de código                      | 1.18.24     |
 | Open API 3              | Documentação dos enpoints e exportação de API          | 1.6.8       |
